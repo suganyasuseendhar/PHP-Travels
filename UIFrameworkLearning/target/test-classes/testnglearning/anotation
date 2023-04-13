@@ -1,0 +1,133 @@
+why we need selenium in testNG
+
+
+
+
+
+
+
+
+TestNG flow of execution:
+
+/*
+ * BeforeSuite
+ * BeforeTest
+ * BeforeClass
+ * BeforeMethod
+ * Test
+ * AfterMethod
+ * AfterClass
+ * AfterTest
+ * AfterSuite  
+ * 
+ * for 100 test cases, 2 Tests (Sanity and Smoke), 10 Classes
+ * 1 BS
+ * 2 BT (Once for each test group)
+ * 10 BC (once for each Class)
+ * 100 BM
+ * 100 @Test
+ * 100 AM
+ * 10 AC
+ * 2 AT
+ * 1 AS
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+day : 28.3.2023
+
+
+how @Test method executed??
+@Test method executed in alphabatical order
+           
+            testcase 1
+            testcase 2
+            testcase 3
+            
+            in this case testcase name are same so it will follow numerical value
+
+Different attributes available in testNG:
+          1)priority setting
+          2)Enabled
+          3)Deponds on method
+          4)alwaysRun=true
+
+1) priority setting:
+
+@Test (Priority = 1)
+@Test (Priority = 2)
+@Test (Priority = 3)
+    based on the prriority it will run.
+
+2) Enabled : 
+@Test (Priority = 1 Enabled = false)
+   @Test method is literally is True
+   @Test Enabled = true
+   @Test Enabled = false (don't want to run particular test case we will put  @Test Enabled = false;)
+   
+3) Deponds on method:
+@Test(dependsOnMethods = "testCase2" )
+   making a test deponds on another test case.deponds on methods holds higher priority then priority.
+   so Deponds on method it will exectuted immediately executed after particular testcase.
+   
+   
+4) alwaysRun=true;
+@Test(priority = 2, alwaysRun=true)
+   the test will failure also the test will executed. @Test (Priority = 1 Enabled = false alwaysRun=true) 
+   is won't run 
+   
+   
+ note: 
+
+        WebDriverManager.chromedriver().setup();
+		driver= new ChromeDriver();
+		
+ WebDriverManager will launch chromedriver
+ selenium 4.6.0 we will directly use chrome driver:
+ driver.close(); will current working window
+ driver.quit(); will quit all the browser window that have been on the particular driver.
+ 
+ Groups:
+ grouping a set of similar test case we will ececuted. ex: facebook,google dailybases sanity suite (for production website)
+ at regular intervel of time. because they will check the flow execution is correct without any errror.
+ groups will come with @Test methods (groups= {"sanity"})
+ @Test (groups= {"regression","sanity"}) two are more testcaes will follow the same test
+ 
+ 
+ how to create testNG.xml:
+ 
+ select what are the class we have right click====> convert =========>convert to Testng xml file
+ 
+ specified groups into two level:
+ 1)suite level
+ 2)Test level
+       <suite>
+          <test>
+            <classes>
+                <class> @test methods will run</class>
+            </classes>
+          </test>
+       </suite>
+ suite level: suite level is the super set of everything. common to everything. 
+ 
+   syntax for xml classes writting: packagename.classname
+   ex:testnglearning.GroupSocial
+   
+   <Groups>
+       <Run>
+            <include name="sanity"/> 
+             <exclude name="sanity"/> // exclude methods in 
+       </Run>
+   </Groups>
+
+alwaysRun = true;(it dosenot follow any )   

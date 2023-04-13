@@ -1,0 +1,29 @@
+package stringbuffer;
+
+public class StringImmutable {
+
+	public static void main(String args[])
+	{
+		String str= "learning";
+		str.concat("java");
+		//String str1=str.concat("java");
+		
+		
+		System.out.println("The value of str is "+str);
+		//System.out.println("The value of str is "+str1);
+		//System.out.println(str+"Learning");
+
+		
+	}
+	
+	public static void main1(String args[])
+	{
+	  String str = "selenium";
+	  String str1 = str.concat("with Java");
+	  
+	  System.out.println("The  value of str is : " + str);
+	  System.out.println("The value of str1 is :" + str1);
+		
+		
+	}
+}

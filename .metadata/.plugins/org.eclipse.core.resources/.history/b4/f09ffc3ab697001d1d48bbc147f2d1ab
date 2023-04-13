@@ -1,0 +1,26 @@
+package collections;
+
+import java.util.ArrayList;
+
+public class ArrayListLearning {
+
+	
+	public void arrayList() {
+		
+		
+		ArrayList<Integer> arlist = new ArrayList<Integer>();
+		arlist.add(10);
+		arlist.add(-25);
+		arlist.add(78);
+		arlist.add(7);
+		arlist.add(90);
+		
+	
+		
+		
+	}
+
+	
+	
+	
+}

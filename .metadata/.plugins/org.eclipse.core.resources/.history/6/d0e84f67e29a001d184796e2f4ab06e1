@@ -1,0 +1,53 @@
+package seleniumlearning;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+
+
+public class SeleniumFirstProgram {
+	@Test
+	public void sele() {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.google.com");
+		
+		driver.findElement(By.name("q")).sendKeys("java \n");
+		
+		/*WebElement element = driver.findElement(By.name("q"));
+		element.sendKeys("Hello \n");*/
+		
+		
+		
+		
+		
+	}
+}
+/*
+@Test	
+public void selen() {
+		
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("file:///D:/learning%20workspace/UIFrameworkLearning/src/test/java/seleniumlearning/html%20files/StudentRegistration.html");
+		
+		
+		
+		WebElement element = driver.findElement(By.id("firstname"));
+		element.sendKeys("suganya");
+		
+		element = driver.findElement(By.id("lastname"));
+		element.sendKeys("suseendhar");
+		
+		
+		
+	}
+	
+	
+}*/

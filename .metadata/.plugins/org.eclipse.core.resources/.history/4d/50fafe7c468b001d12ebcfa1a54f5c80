@@ -1,0 +1,30 @@
+package learning.java.com;
+
+import java.util.Scanner;
+
+import org.testng.annotations.Test;
+
+public class EvenNumber {
+	@Test
+	
+	public void even() {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Enter the number is :  ");
+		int number = sc.nextInt();
+		
+		int i=0;
+		
+		while (i % 2==0){
+			
+			System.out.println("enter number is even");
+			i++;
+			
+		}
+	
+		
+		
+		
+		
+	}
+	
+}

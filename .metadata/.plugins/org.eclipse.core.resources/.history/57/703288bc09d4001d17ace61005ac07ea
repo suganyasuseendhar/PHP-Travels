@@ -1,0 +1,47 @@
+package com.w3schools.tests;
+
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+import com.w3schools.pages.PersonalDetailsPageForSignup;
+import com.w3schools.pages.SignUpPage;
+
+public class PersonalDetailsTestForSignUp extends PersonalDetailsPageForSignup {
+
+	
+	@Test
+	public void personalDetailSignup() {
+		
+		try {
+			
+			launchbrowser("https://profile.w3schools.com/sign-up");
+			PersonalDetailsPageForSignup personalDet = PageFactory.initElements(driver, PersonalDetailsPageForSignup.class);
+			
+			
+			personalDet.enterFirstName("suganya");
+			personalDet.enterLastName("suseendhar");
+			personalDet.enterContinue();
+			Thread.sleep(7000);
+			
+			
+			String personalDetailTitle = "Sign up - W3Schools";
+			Assert.assertEquals(driver.getTitle(), personalDetailTitle);
+			
+			
+			
+		}	
+		
+		
+	
+	
+	
+	
+	catch(Exception ex) {
+		
+		System.out.println("The page not found exception");
+		ex.printStackTrace();
+		
+	}
+}
+}

@@ -1,0 +1,88 @@
+package com.w3schools.utils;
+
+import java.util.Set;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SuganyaBaseTest {
+
+	public static WebDriver driver = null;
+	
+	
+	public void baseTestCases() {
+		
+		
+	try {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("String url");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	} catch (Exception e) {
+		
+		System.out.println("problem occurs while launching the browser");
+		e.printStackTrace();
+	}
+	}
+
+
+	public void quitBrowser() {
+		
+		driver.quit();
+		
+		
+	}
+	
+	
+	//windows handling
+	public void windowHandling() {
+		try {
+			String pWindow = driver.getWindowHandle();
+			Set<String> windowHandle = driver.getWindowHandles();
+
+			for (String adr : windowHandle) {
+
+				if (!(pWindow.contentEquals(adr))) {
+					driver.switchTo().window(adr);
+				}
+				System.out.println(adr);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+		
+		public void sizeOfTheWindow() {
+			try {
+				
+				String pWindow = driver.getWindowHandle();
+				Set<String> windowHandle = driver.getWindowHandles();
+
+				for (String adr : windowHandle) {
+
+					if (!(pWindow.contentEquals(adr))) {
+						driver.switchTo().window(adr);
+					}
+					System.out.println(adr);
+				
+				
+			}
+				int size = driver.getWindowHandles().size();
+			}
+			
+			catch(Exception e) {
+				
+			}
+			}
+}
+	
+
+		
+		
+		
+		
+	

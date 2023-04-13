@@ -1,0 +1,13 @@
+package interfaceslik;
+
+public class ChennaiSlik {
+
+	public void diwaliOffer();
+	
+	
+	public void pongalOffer();
+	
+	
+	
+	
+}

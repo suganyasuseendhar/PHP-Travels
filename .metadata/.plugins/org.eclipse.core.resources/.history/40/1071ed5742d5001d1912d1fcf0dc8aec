@@ -1,0 +1,38 @@
+package com.w3schools.utils;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class SuganyaBaseTest {
+
+	
+	public void baseTestCases() {
+		
+		
+	try {
+		WebDriverManager.chromedriver().setup();
+		WebDriver driver = new ChromeDriver();
+		driver.get("String url");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+	} catch (Exception e) {
+		
+		System.out.println("problem occurs while launching the browser");
+		e.printStackTrace();
+	}
+	
+	
+	//windows handling
+	
+
+		
+		
+		
+		
+	}
+}
+

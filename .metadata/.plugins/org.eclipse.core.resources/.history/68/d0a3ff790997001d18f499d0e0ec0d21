@@ -1,0 +1,21 @@
+package interfaceslik;
+
+public class ChennaiSlik implements TamilnaduAssociation {
+
+	public void diwaliOffer() {
+	}
+
+	public void pongalOffer() {
+
+	}
+
+	public void pureslik() {
+		// TODO Auto-generated method stub
+
+	}
+
+	public void cottonslik() {
+		// TODO Auto-generated method stub
+
+	}
+}

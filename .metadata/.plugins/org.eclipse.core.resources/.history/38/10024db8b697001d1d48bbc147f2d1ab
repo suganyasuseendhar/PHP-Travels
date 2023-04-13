@@ -1,0 +1,51 @@
+package collections;
+
+import java.util.ArrayList;
+
+import org.testng.annotations.Test;
+
+public class ArrayListLearning {
+
+	@Test
+	public void arrayList() {
+		
+	//create data	
+		ArrayList<Integer> arlist = new ArrayList<Integer>();
+		arlist.add(10);
+		arlist.add(-25);
+		arlist.add(78);
+		arlist.add(7);
+		arlist.add(90);
+		
+	
+	//read data
+		
+		System.out.println(arlist.get(0));
+		System.out.println(arlist.get(1));
+		System.out.println(arlist.get(2));
+		System.out.println(arlist.get(3));
+		System.out.println(arlist.get(4));
+		
+		
+	//modify
+		
+		
+		arlist.set(0, 50);
+		arlist.set(1, -90);
+		arlist.set(2,250);
+		arlist.set(3, 650);
+		arlist.set(4, -950);
+		
+		System.out.println(arlist.get(0));
+		System.out.println(arlist.get(1));
+		System.out.println(arlist.get(2));
+		System.out.println(arlist.get(3));
+		System.out.println(arlist.get(4));
+		
+		
+	}
+
+	
+	
+	
+}

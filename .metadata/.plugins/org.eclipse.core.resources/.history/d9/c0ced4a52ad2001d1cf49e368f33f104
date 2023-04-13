@@ -1,0 +1,27 @@
+package com.w3schools.tests;
+
+import com.w3schools.pages.PersonalDetailsPageForSignup;
+
+public class PersonalDetailsTestForSignUp extends PersonalDetailsPageForSignup {
+
+	public void personalDetailSignup() {
+		
+		try {
+			
+			
+			
+		}	
+		
+		
+	
+	
+	
+	
+	catch(Exception ex) {
+		
+		System.out.println("The page not found exception");
+		ex.printStackTrace();
+		
+	}
+}
+}

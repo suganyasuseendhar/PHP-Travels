@@ -1,0 +1,71 @@
+package com.w3schools.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.w3schools.utils.BaseTest;
+
+public class ProfileUpdatePage extends BaseTest {
+
+	@FindBy(id="modalusername")
+	WebElement pusername;
+	
+	@FindBy(xpath="//input[@name='current-password']")
+	WebElement ppassword;
+	
+	@FindBy(xpath="//span[text()='Log in']")
+	WebElement plogin;
+
+	@FindBy(xpath = "//input[@name='first_name']")
+	WebElement pfirstName;
+
+	@FindBy(xpath = "//input[@name='last_name']")
+	WebElement plastName;
+	
+	@FindBy(xpath = "//div[@class='CheckBox_wrapper__hepKG CheckBox_size_md__T+p11']")
+	WebElement pselectBox;
+	
+	public void setUsername (String newUser) {
+		
+		//username.sendKeys(newUser);
+		
+		waitForElement(pusername);
+		typeText(pusername, newUser);
+	}
+	
+	
+public void setPassword (String newPassword) {
+		
+		//password.sendKeys(newPassword);
+	waitForElement(ppassword);
+	typeText(ppassword, newPassword);
+	}
+
+
+public void setFirstName(String first) {
+
+	
+	
+	waitForElement(pfirstName);
+	typeText(pfirstName, first);
+	
+
+}
+
+public void setLastName(String last) {
+
+	waitForElement(plastName);
+	typeText(plastName, last);
+}
+
+public void saveAS(){
+	pselectBox.click();
+	
+	
+	
+}
+
+	
+	
+	
+}

@@ -1,0 +1,105 @@
+package com.w3schools.pages;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.w3schools.utils.BaseTest;
+
+public class ProfileUpdatePage extends BaseTest {
+
+	@FindBy(id = "modalusername")
+	WebElement username;
+
+	@FindBy(xpath = "//input[@name='current-password']")
+	WebElement password;
+
+	@FindBy(xpath = "//span[text()='Log in']")
+	WebElement login;
+
+	@FindBy(xpath = "//input[@name='profile-firstname']")
+	WebElement pfirstName;
+
+	@FindBy(xpath = "//input[@name='profile-lastname']")
+	WebElement plastName;
+
+	@FindBy(xpath = "//input[@id='profile-email-input']")
+	WebElement pemailNmae;
+
+	@FindBy(xpath = "//input[@name='password']")
+	WebElement ppassword;
+
+	@FindBy(xpath = "//div[@class='CheckBox_wrapper__hepKG CheckBox_size_md__T+p11']")
+	WebElement pselectBox;
+
+	@FindBy(xpath = "//a[text()='Profile']")
+	WebElement profile;
+
+	public void setUsername(String newUser) {
+
+		// username.sendKeys(newUser);
+
+		waitForElement(username);
+		typeText(username, newUser);
+	}
+
+	public void setPassword(String newPassword) {
+
+		// password.sendKeys(newPassword);
+		waitForElement(password);
+		typeText(password, newPassword);
+	}
+
+	public void enterLogin() {
+
+		// login.click();
+		waitForElement(login);
+		clickAction(login);
+
+	}
+
+	public void enterProfile() {
+
+		clickAction(profile);
+	}
+
+	public void setPFirstName(String first) {
+
+		waitForElement(pfirstName);
+
+		typeText(pfirstName, first);
+
+	}
+
+	public void setPLastName(String last) {
+
+		waitForElement(plastName);
+		typeText(plastName, last);
+	}
+
+	
+	public void setPEmail(String emailID) {
+
+		waitForElement(pemailNmae);
+		typeText(pemailNmae, emailID);
+	}
+	
+	public void setPPassword(String newPassword) {
+
+		// password.sendKeys(newPassword);
+		waitForElement(ppassword);
+		typeText(ppassword, newPassword);
+	}
+
+	public void setPSelect() {
+
+		// password.sendKeys(newPassword);
+		waitForElement(pselectBox);
+		pselectBox.click();
+	}
+
+	public void saveAS() {
+		pselectBox.click();
+
+	}
+
+}

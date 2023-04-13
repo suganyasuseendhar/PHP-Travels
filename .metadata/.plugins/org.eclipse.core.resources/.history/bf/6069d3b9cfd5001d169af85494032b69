@@ -1,0 +1,43 @@
+package javascriptexecutor;
+
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+
+public class TwoPlugsMethod {
+
+	
+	public static void flash(WebElement element, WebDriver driver) {
+		
+	String bgcolour =	element.getCssValue("backgroundcolour");
+	
+	for(int i=0; i<500; i++) {
+		
+		changeColour("#000000", element, driver);
+		
+		changeColour("bgcolour", element, driver);
+		
+		
+	}
+		
+		
+	}
+	
+	public static void changeColour(String colour, WebElement element, WebDriver driver) 
+	{
+	//https://www.c-sharpcorner.com/article/how-to-highlight-webelements-using-javascriptexecutor-in-selenium-webdriver/	
+	try {
+		JavascriptExecutor js =(JavascriptExecutor) driver;
+		js.executeScript("arguments[0].style.backgroundColor = '" + colour + "'", element);
+	  //js.executeScript("arguments[0].style.backgroundColour='yellow'", element); 
+	} catch (Exception e) {
+		
+		e.printStackTrace();
+	}
+		
+	
+	
+	
+	
+	} 
+}
